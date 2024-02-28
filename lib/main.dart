@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -14,20 +16,22 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: '/',
       routes: {
-        '/': (context) => MyHomePage(),
-        '/login': (context) => LoginPage(),
-        '/profile': (context) => ProfilePage(),
+        '/': (context) => const MyHomePage(),
+        '/login': (context) => const LoginPage(),
+        '/profile': (context) => const ProfilePage(),
       },
     );
   }
 }
 
 class MyHomePage extends StatelessWidget {
+  const MyHomePage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Home'),
+        title: const Text('Home'),
       ),
       body: Center(
         child: Column(
@@ -37,21 +41,21 @@ class MyHomePage extends StatelessWidget {
               onPressed: () {
                 Navigator.pushNamed(context, '/login');
               },
-              child: Text('Login'),
+              child: const Text('Login'),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
                 // Implement action for second button
               },
-              child: Text('Button 2'),
+              child: const Text('Button 2'),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
                 // Implement action for third button
               },
-              child: Text('Button 3'),
+              child: const Text('Button 3'),
             ),
           ],
         ),
@@ -61,37 +65,39 @@ class MyHomePage extends StatelessWidget {
 }
 
 class LoginPage extends StatelessWidget {
+  const LoginPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Login'),
+        title: const Text('Login'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            TextField(
+            const TextField(
               decoration: InputDecoration(
                 labelText: 'Email',
               ),
             ),
-            SizedBox(height: 20),
-            TextField(
+            const SizedBox(height: 20),
+            const TextField(
               decoration: InputDecoration(
                 labelText: 'Password',
               ),
               obscureText: true,
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
                 // Implement login functionality
                 // For simplicity, navigate to the profile page
                 Navigator.pushNamed(context, '/profile');
               },
-              child: Text('Submit'),
+              child: const Text('Submit'),
             ),
           ],
         ),
@@ -101,13 +107,15 @@ class LoginPage extends StatelessWidget {
 }
 
 class ProfilePage extends StatelessWidget {
+  const ProfilePage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Profile'),
+        title: const Text('Profile'),
       ),
-      body: Center(
+      body: const Center(
         child: Text(
           'Profile Details',
           style: TextStyle(fontSize: 24),
